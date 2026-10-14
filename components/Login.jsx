@@ -1,19 +1,27 @@
 import { Button } from "@heroui/react";
 import {InputGroup, InputGroupInput, Label, TextField} from "@heroui/react";
 import React from "react"
+import { userLogin } from "/api.js"
 import { useState } from "react";
 export const Login = ({setisLoggedIn}) => {
     const [Username, setUsername] = useState('')
     const [Password , setPassword] = useState('')
     const [msg, setmsg] = useState('')
-    const myuser = 'BIGBUSS'
-const mypw = '1234'
-const handleLogin =()=>{
-    console.log(Username, Password)
-if  (Username == myuser && Password == mypw) {setisLoggedIn(true)
-    setmsg('')
-}
-else setmsg('Helytelen felhasználónév/jelszó!')
+
+
+
+const handleLogin =async ()=>{
+   try {
+    const data = await userLogin(Username, Password)
+    console.log(data);
+    
+    setisLoggedIn(data.success)
+    setmsg(data.msg)
+   } catch (error) {
+    console.log(error);
+    setmsg(error.response?.data?.msg || 'Rossz felhasználó/jelszó')
+   }
+
 }
 
 
