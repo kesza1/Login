@@ -1,4 +1,4 @@
-export const programs = [
+export let programs = [
   {
     id: 1,
     title: "Sportnap",
@@ -73,8 +73,23 @@ export const programs = [
   },
 ];
 
-export const ToDosData =[
-  {id:1, descr:'bevásárlás', done:false}
-  ,{id:2, descr:'könyvtár', done:true},
-{id:3, descr:'könyvtár', done:false},
+
+export let todosData = [
+  {id: 1, description: "Bevásárlás", done: false},
+  {id: 2, description: "Könyvtár", done: true},
+  {id: 3, description: "Tankolás", done: false}
 ]
+
+
+export const quotesFromDatabase = [
+  "The only way to do great work is to love what you do. - Steve Jobs",
+  "In the middle of every difficulty lies opportunity. - Albert Einstein",
+  "Success is not final, failure is not fatal: It is the courage to continue that counts. - Winston Churchill",
+  "It does not matter how slowly you go as long as you do not stop. - Confucius",
+  "The best way to predict the future is to invent it. - Alan Kay",
+  "You miss 100% of the shots you don’t take. - Wayne Gretzky",
+  "The only limit to our realization of tomorrow is our doubts of today. - Franklin D. Roosevelt",
+  "Hardships often prepare ordinary people for an extraordinary destiny. - C.S. Lewis",
+  "Do not go where the path may lead, go instead where there is no path and leave a trail. - Ralph Waldo Emerson",
+  "Your time is limited, so don't waste it living someone else’s life. - Steve Jobs"
+];
